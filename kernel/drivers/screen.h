@@ -8,7 +8,9 @@
 #define REG_SCREEN_DATA 0x3d5
 
 /* Public kernel API */
-void print_string(char* string);
-void print_nl();
+void print_string(char* message);
 void clear_screen();
 int scroll_ln(int offset);
+void set_cursor(int offset);
+int get_offset(int col, int row);
+void set_char_at_video_memory(char character, int offset);
