@@ -2,6 +2,10 @@
 
 void main() {
     clear_screen();
-    print_string("test_string");
+    const char *testString = "test_string"; // This doesnt point to the correct string literal, no idea why
+                                            // When dereferencing it returns a 0 value???
+    print_char(testString[1]);
+    print_char(testString[2]);
+    print_string(testString);
 }
 

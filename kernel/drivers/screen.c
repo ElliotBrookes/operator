@@ -5,8 +5,8 @@
 #define WHITE_ON_BLACK 0x0f
 
 // SCREEN DEVICE i/o ports
-#define REG_SCREEN_CTRL 0x3D4
-#define REG_SCREEN_DATA 0x3D5
+#define REG_SCREEN_CTRL 0x3d4
+#define REG_SCREEN_DATA 0x3d5
 #include "ports.h"
 
 
@@ -58,18 +58,12 @@ void print_char(char rune) {
     set_cursor(offset + 2);
 }
 
-void print_string(char *message) {
-    print_char('f');
-    message[0] = 'a';
-    message[1] = 'a';
-    int c = 0;
-
-    while ( message[c] != 0) {
-        print_char(message[c]);
-        c++;
-    }
+int print_string(const char *message) {
+    print_char('x');
+    print_char('x'); // these work, so function is called ok
 
     for (int i = 0; message[i] != 0; i++) {
         print_char(message[i]);
     }
+    return 0;
 }
